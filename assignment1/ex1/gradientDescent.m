@@ -23,10 +23,16 @@ for iter = 1:num_iters
     
     %h = theta(1) + (theta(2)* X(:,2));
 
-    theta_zero  = theta(1) - alpha * (1/m) * ((h' - y)' * X(:,1));
-    theta_one  = theta(2) - alpha * (1/m) * ((h' - y) ' * X(:,2));
-
-    theta = [theta_zero; theta_one];
+    %not vectorization version
+    %theta_zero  = theta(1) - alpha * (1/m) * ((h' - y)' * X(:,1));
+    %theta_one  = theta(2) - alpha * (1/m) * ((h' - y) ' * X(:,2));
+     
+     
+     %vecorization version
+     theta_all = theta' - alpha * (1/m) * ((h' - y)' * X);
+      
+    
+    theta = theta_all';
     
 
 
