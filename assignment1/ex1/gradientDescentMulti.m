@@ -19,8 +19,8 @@ for iter = 1:num_iters
 
 h = theta' * X';
 
-theta = theta' - alpha*(1/m)*((h'-y)'*X);
-
+theta_all = theta' - alpha*(1/m)*((h'-y)'*X);
+theta = theta_all';
 
 
 

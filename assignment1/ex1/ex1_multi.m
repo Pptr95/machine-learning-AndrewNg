@@ -105,6 +105,10 @@ fprintf('\n');
 % Recall that the first column of X is all-ones. Thus, it does
 % not need to be normalized.
 price = 0; % You should change this
+new_entry = [1650,3];
+normalized_new_entry = (new_entry - mu)./sigma;
+normalized_new_entry = [1, normalized_new_entry];
+price = normalized_new_entry*theta;
 
 
 % ============================================================
