@@ -27,14 +27,14 @@ clear ; close all; clc
 
 fprintf('Loading and Visualizing Data ...\n')
 
-% Load from ex6data1: 
-% You will have X, y in your environment
-load('ex6data1.mat');
+	% Load from ex6data1: 
+	% You will have X, y in your environment
+	load('ex6data1.mat');
 
-% Plot training data
-plotData(X, y);
+	% Plot training data
+	plotData(X, y);
 
-fprintf('Program paused. Press enter to continue.\n');
+	fprintf('Program paused. Press enter to continue.\n');
 pause;
 
 %% ==================== Part 2: Training Linear SVM ====================

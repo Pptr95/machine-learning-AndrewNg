@@ -35,10 +35,11 @@ for i = 1:size(values, 2),
 		model= svmTrain(X, y, C, @(x1, x2) gaussianKernel(x1, x2, sigma)); 		
 		predictions = svmPredict(model, Xval);
 		accuracy = mean(double(predictions ~= yval));
-		all_predictions(row_store, 1) = C;
-		all_predictions(row_store, 2) = sigma;
-		all_predictions(row_store, 3) = accuracy;
-		row_store += 1;
+		current_row = (i-1)*size(values, 2) + j;
+		all_predictions(current_row, 1) = C;
+		all_predictions(current_row, 2) = sigma;
+		all_predictions(current_row, 3) = accuracy;
+
 	end
 end
 
