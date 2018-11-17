@@ -1,3 +1,4 @@
+From exmh-workers-admin@redhat.com  Thu Aug 22 12:36:23 2002
 > Anyone knows how much it costs to host a web portal ?
 >
 Well, it depends on how many visitors you're expecting.
