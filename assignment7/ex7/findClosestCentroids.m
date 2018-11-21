@@ -21,19 +21,15 @@ idx = zeros(size(X,1), 1);
 % Note: You can use a for-loop over the examples to compute this.
 %
 
-for i=1:size(X, 1)
-	%distances = (sqrt((X(i, :).^2) - (centroids.^2))).^2;
-	%[minK, indexOfK] = min(distances);
-	%idx(i) = indexOfK(1);
 
-	idx(i) = 1;
-	distance = sum(sqrt((X(i, :).^2) - (centroids(1).^2))).^2;
+for i=1:size(X, 1)
+	first_dist = (norm(X(i, :) - centroids(1, :) , 2)).^2;
+	idx(i) = 1; 
 	for j=2:K
-		new_distance = sum(sqrt((X(i, :).^2) - (centroids(j).^2))).^2;
-		if new_distance < distance
-			distance = new_distance;
+		new_dist = (norm(X(i, :) - centroids(j, :) , 2)).^2;
+		if new_dist < first_dist
+			first_dist = new_dist;
 			idx(i) = j;
-		end
 	end
 end
 
