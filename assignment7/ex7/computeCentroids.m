@@ -26,7 +26,27 @@ centroids = zeros(K, n);
 % Note: You can use a for-loop over the centroids to compute this.
 %
 
+myMatrix = zeros(K*2, m);
+length1 = 0;
+length2 = 0;
+length3 = 0;
 
+for i=1:size(X, 1)
+	if idx(i) == 1
+		myMatrix(i, 1:2) = X(i, :);
+		length1 += 1;
+	elseif idx(i) == 2
+		myMatrix(i, 3:4) = X(i, :);
+		length2 += 1;
+	elseif idx(i) == 3
+		myMatrix(i, 5:6) = X(i, :);
+		length3 += 1;
+	end
+end
+
+centroids(1, :) = (1/length1)*sum(myMatrix(:, 1:2));
+centroids(2, :) = (1/length2)*sum(myMatrix(:, 3:4));
+centroids(3, :) = (1/length3)*sum(myMatrix(:, 5:6));
 
 
 
