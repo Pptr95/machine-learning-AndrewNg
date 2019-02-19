@@ -1,21 +1,9 @@
-Hi Petru,
+> Anyone knows how much it costs to host a web portal ?
+>
+Well, it depends on how many visitors you're expecting.
+This can be anywhere from less than 10 bucks a month to a couple of $100. 
+You should checkout http://www.rackspace.com/ or perhaps Amazon EC2 
+if youre running something big..
 
- 
-
-As discussed during our phone conversation, we’d kindly ask you to fill in the attached quiz which will help us assess your areas of expertise.
-
- 
-
-Many thanks in advance for completing the assessment.
-
- 
-
-As agreed, I kindly ask you to complete the quiz by Wednesday 13 of June 2018. In case you need any further clarification, please feel free to contact me.
-
- 
-
-Could you please confirm safe receipt of the quiz?
-
- 
-
-Good luck!
+To unsubscribe yourself from this mailing list, send an email to:
+groupname-unsubscribe@egroups.com
