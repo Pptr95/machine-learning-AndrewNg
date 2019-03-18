@@ -26,10 +26,12 @@ for k = 1:num_labels
  
      % Run fmincg to obtain the optimal theta
      % This function will return theta and the cost 
-     [theta] = fmincg (@(t)(lrCostFunction(t, X, (y == k), lambda)), initial_theta, options);
+     [theta] = fmincg (@(t)(lrCostFunction(t, X, (y == k), lambda)), initial_theta, options); % this theta has size (n + 1, 1)
      
 
-     all_theta(k, :) = theta;
+     all_theta(k, :) = theta'; % since theta has size (n + 1, 1), to assign at all_theta, theta need to be transposed.
+     						   % Actually Matlab/Octave already understand that, to assign in that way to all_theta,
+     						   % theta need be transposed
 
 end
 

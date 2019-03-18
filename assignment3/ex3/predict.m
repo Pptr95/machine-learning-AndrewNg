@@ -23,11 +23,17 @@ p = zeros(size(X, 1), 1);
 
 
 
+a1 = [ones(m, 1) X]; %adding bias therm
+
+a2 = sigmoid(Theta1*a1')';
+a2 = [ones(size(a2, 1), 1) a2]; %adding bias therm
+
+h = sigmoid(a2*Theta2'); % h is a3
 
 
+[values,  idx] = max(h, [], 2);
 
-
-
+p = idx;
 
 % =========================================================================
 
