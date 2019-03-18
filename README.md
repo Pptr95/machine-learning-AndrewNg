@@ -1,3 +1,3 @@
 # machine-learning-ng
 
-Note: assignments regarding neural network are missing
+My personal solutions in Octave/MATLAB and Python at the assignments of [Machine Learning course](https://www.coursera.org/learn/machine-learning) on Coursera held by Mr. Andrew Ng.
