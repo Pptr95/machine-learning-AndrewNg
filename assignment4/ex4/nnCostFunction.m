@@ -76,9 +76,7 @@ end
 % We do not regularize the terms that correspond to the bias in Theta1 and Theta2. 
 % So we put thier first column (which represents the bias term) to zero. 
 
-J = J + (lambda/(2*m))*(sum(sum((Theta1).^2)) + sum(sum((Theta2).^2)));
-
-
+J = J + (lambda/(2*m))*(sum(sum((Theta1(:, 2:end)).^2)) + sum(sum((Theta2(:, 2:end)).^2)));
 
 
 
