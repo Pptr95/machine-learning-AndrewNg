@@ -49,8 +49,9 @@ end
 
 
 X = [ones(m, 1) X]; %add bias column to X 
+
+%feed forward propagation for each training example
 for i = 1:m
-	%feed forward propagation for each training example
 	a1 = X(i, :); %(1, 401)
 	
 	a2 = sigmoid(Theta1*a1')'; %(1, 25) 
@@ -64,8 +65,18 @@ end
 
 
 
+% Part 3: Implement regularization with the cost function and gradients.
+%
+%         Hint: You can implement this around the code for
+%               backpropagation. That is, you can compute the gradients for
+%               the regularization separately and then add them to Theta1_grad
+%               and Theta2_grad from Part 2.
+%
 
+% We do not regularize the terms that correspond to the bias in Theta1 and Theta2. 
+% So we put thier first column (which represents the bias term) to zero. 
 
+J = J + (lambda/(2*m))*(sum(sum((Theta1).^2)) + sum(sum((Theta2).^2)));
 
 
 
@@ -88,13 +99,6 @@ end
 %         Hint: We recommend implementing backpropagation using a for-loop
 %               over the training examples if you are implementing it for the 
 %               first time.
-%
-% Part 3: Implement regularization with the cost function and gradients.
-%
-%         Hint: You can implement this around the code for
-%               backpropagation. That is, you can compute the gradients for
-%               the regularization separately and then add them to Theta1_grad
-%               and Theta2_grad from Part 2.
 %
 
 
