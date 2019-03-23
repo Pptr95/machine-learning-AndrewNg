@@ -74,7 +74,6 @@ end
 %
 
 % We do not regularize the terms that correspond to the bias in Theta1 and Theta2. 
-% So we put thier first column (which represents the bias term) to zero. 
 
 J = J + (lambda/(2*m))*(sum(sum((Theta1(:, 2:end)).^2)) + sum(sum((Theta2(:, 2:end)).^2)));
 
@@ -101,18 +100,33 @@ J = J + (lambda/(2*m))*(sum(sum((Theta1(:, 2:end)).^2)) + sum(sum((Theta2(:, 2:e
 
 
 
+for i = 1:m
 
+	% feed forward propagation
+	a1 = X(i, :); %(1, 401)
+	a2 = sigmoid(Theta1*a1')'; %(1, 25) 
+	a2 = [ones(size(a2, 1), 1) a2]; %(1, 26)
+	h = sigmoid(Theta2*a2')'; %(1, 10)
 
+	% 2
+	delta_3 = h - y_recoded(i, :); %(1, 10)
 
+	% 3
+	delta_2 = (Theta2(:, 2:end)'*delta_3').*sigmoidGradient(Theta1*a1'); %(25, 1); we need to ignore the bias term of Theta2 (so we ignore the first column)
+	%(25, 10)*(10, 1) .* (25, 401)*(401, 1)
 
+	% 4
+	Theta1_grad = Theta1_grad + (delta_2*a1);
+	%(25, 1) * (1, 401)
 
+	Theta2_grad = Theta2_grad + (delta_3'*a2);
+	%(10, 1) * (1, 26)
 
+end
 
-
-
-
-
-
+%5
+Theta1_grad = (1/m)*Theta1_grad;
+Theta2_grad = (1/m)*Theta2_grad;
 
 
 
